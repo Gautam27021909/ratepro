@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link href= {% static "D:\slu project\RatingSystem\RateRatePro\static\SignupPage.css" %} rel="stylesheet">
+    {% comment %} <link rel="stylesheet" href="D:\slu project\RatingSystem\RateRatePro\static\SignupPage.css"> {% endcomment %}
+</head>
+<body>
+    <div className="full-page-wrapper">
+        <div className="signup-container">
+            <h1 className="signup-title">
+                <b>Student</b> SignUp
+            </h1>
+
+            <button className="google-signup-btn">
+                <img src={`${process.env.PUBLIC_URL}/images/google.png`} alt="Google Logo" className="google-icon" />
+                Sign up with Google
+            </button>
+
+            <div className="divider">
+                <span className="divider-text">or sign up with email</span>
+            </div>
+
+            {% comment %} {/* Signup form */} {% endcomment %}
+            <form action="" className="signup-form" onSubmit={handleContinueClick} method = "post">
+                {% if messages %}
+                 <ul class="messages">
+                {% for message in messages %}
+                <li  {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
+                {% endfor %} 
+                </ul>
+                {% endif %}
+                {% csrf_token %}
+                <input type="text" placeholder="Username" className="signup-input" name="username"/>
+                <input type="text" placeholder="Nickname" className="signup-input" name="nickname"/>
+                <input type="text" placeholder="Major" className="signup-input" name="major"/>
+                <input type="email" placeholder="Email" className="signup-input" name="email"/>
+                <input type="password" placeholder="Password" className="signup-input" name="password" />
+                <button type="submit" className="continue-btn">Continue</button>
+            </form>
+
+            <p className="signup-text">
+                Already have an account? <a href="/login" className="signup-link">Login</a>
+            </p>
+        </div>
+    </div>
+    <!-- <script src="{% static "js/App.js" %}"></script>
+    <script src="{% static "js/ForgotPasswordPage.js" %}"></script>
+    <script src="{% static "js/index.js" %}"></script>
+    <script src="{% static "js/Landing.js" %}"></script>
+    <script src="{% static "js/LoginPage.js" %}"></script>
+    <script src="{% static "js/ProfessorResultsPage.js" %}"></script>
+    <script src="{% static "js/ReportWebVitals.js" %}"></script> -->
+    <script src="{% static "js/SignupPage.js" %}"></script>
+    <!-- <script src="{% static "js/SlidingMenu.js" %}"></script> -->
+
+</body>
+</html>

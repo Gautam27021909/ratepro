@@ -1,0 +1,237 @@
+/* Apply Liberation Mono Font to Entire Page */
+* {
+    font-family: 'Liberation Mono', monospace;
+}
+
+/* General Styling */
+body, html {
+    font-family: 'Liberation Mono', monospace; /* Set Liberation Mono as the default font */
+    color: black;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Prevent body from scrolling */
+}
+
+/* Professor Results Container */
+.professor-results-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #f0f4ff; /* Light blue background */
+    height: 100vh;
+    overflow: hidden; /* Prevent body overflow */
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+/* Scrollable Content */
+.professor-results-content {
+    display: grid;
+    grid-template-areas: 
+        'profile data'
+        'courses comments';
+    grid-template-columns: 0.5fr 1.5fr; /* Increase data visualization width */
+    grid-template-rows: auto auto; /* Adjust rows automatically */
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    box-sizing: border-box;
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 10px;
+}
+
+/* Common Card Styling */
+.card {
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Profile Section */
+.professor-profile-section {
+    grid-area: profile;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    width: 90%;
+    max-width: 250px;
+    height: auto;
+}
+
+.professor-photo {
+    width: 130px;
+    height: 135px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    margin: 30px 0 20px 0;
+}
+
+/* Button Container for Compare and Rate Buttons */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Space between buttons */
+    margin-top: 10px;
+}
+
+/* Style for the Compare Button */
+.compare-button {
+    padding: 8px 16px;
+    background-color: #007bff; /* Blue background */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.compare-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Style for the Rate Button */
+.rate-button {
+    padding: 8px 16px;
+    background-color: #007bff; /* Green background */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.rate-button:hover {
+    background-color: #0056b3; /* Darker green on hover */
+}
+
+/* Courses Section */
+.professor-courses-section {
+    grid-area: courses;
+}
+
+.professor-courses-section ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.professor-courses-section li {
+    font-size: 1.1rem;
+    margin: 15px 0; /* Increased margin to add space between courses */
+    padding: 10px 0; /* Optional padding for more spacing */
+    border-bottom: 1px solid #ddd; /* Optional separator between courses */
+}
+
+.course-code {
+    font-weight: bold;
+}
+
+/* Data Visualization Section */
+.professor-data-visualization-section {
+    grid-area: data;
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.visualizations {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.chart-container {
+    margin: 20px;
+    text-align: center;
+}
+
+.chart {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+}
+
+/* Horizontal Bar Chart and Overall Rating */
+.rating-graph-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.horizontal-bar-chart {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.overall-rating {
+    text-align: center;
+}
+
+.rating-score {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+}
+
+.score-value {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.score-max {
+    font-size: 1.5rem;
+    color: #777;
+}
+
+/* Comments Section */
+.professor-comments-section {
+    grid-area: comments;
+}
+
+.comments-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.comments-list li {
+    margin: 10px 0;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .professor-results-content {
+        grid-template-areas: 
+            'profile'
+            'data'
+            'courses'
+            'comments';
+        grid-template-columns: 1fr; /* Single column layout for smaller screens */
+    }
+
+    .professor-profile-section,
+    .professor-courses-section,
+    .professor-data-visualization-section,
+    .professor-comments-section,
+    .rating-graph-container {
+        width: 100%;
+    }
+}
