@@ -8,10 +8,7 @@ urlpatterns = [
     path('', views.signup, name="signup"),
     path('login', views.login, name="login"),
     path('test', views.test, name="test"),
-
-    
     path("admin/", admin.site.urls),
-    
     #! API endpoints for managing users
     path('v1/user/create/', views.create_user, name='create_user'), # For inserting users
     # path('v1/user/professor/create', views.create_professor, name='create_professor'), # For
