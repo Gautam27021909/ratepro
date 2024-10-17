@@ -5,12 +5,12 @@
 
 /* General Styling */
 body, html {
-    font-family: 'Liberation Mono', monospace; /* Set Liberation Mono as the default font */
+    font-family: 'Liberation Mono', monospace; 
     color: black;
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow: hidden; /* Prevent body from scrolling */
+    overflow: hidden; 
 }
 
 /* Professor Results Container */
